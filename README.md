@@ -1,1 +1,1 @@
-# Fatigue_prediction_on_EegData_using_Ganerative_adverserial_Networks
+# Fatigue_prediction_on_EegData_using_Ganerative_Adverserial_Networks
