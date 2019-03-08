@@ -9,4 +9,5 @@
 1. python
 2. tensorflow
 3. keras. 
-4. matlab for EEG data preprocessing 
+4. matlab for data preprocessing 
+5. EEGLab - matlab package (optional) for data visualization 
