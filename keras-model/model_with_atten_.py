@@ -8,18 +8,18 @@ from keras.optimizers import Adam
 from sklearn.metrics import roc_auc_score
 
 # uploading training data
-# X_train = h5py.File('tr_drive_hrnn_1.mat')['tr_drive_hrnn_1']
-# X_train = np.transpose(X_train) #0.125 sec data
-# print(X_train.shape)
+X_train = h5py.File('tr_drive_hrnn_1.mat')['tr_drive_hrnn_1']
+X_train = np.transpose(X_train) #0.125 sec data
+print(X_train.shape)
 # uploading test data
-# X_test = h5py.File('te_drive_hrnn_1.mat')['te_drive_hrnn_1']
-# X_test = np.transpose(X_test)
-# print(X_test.shape)
+X_test = h5py.File('te_drive_hrnn_1.mat')['te_drive_hrnn_1']
+X_test = np.transpose(X_test)
+print(X_test.shape)
 #creating labels for training and test data sets.
-# Y_train = np.zeros(X_train.shape[0])
-# Y_test = np.zeros(X_train.shape[0])
-# Y_train[0:500] = 1 # first 500 samples are target samples
-# Y_test[0:250] = 1 # first 250 samples are target samples
+Y_train = np.zeros(X_train.shape[0])
+Y_test = np.zeros(X_train.shape[0])
+Y_train[0:500] = 1 # first 500 samples are target samples
+Y_test[0:250] = 1 # first 250 samples are target samples
 
 def hrnn_model():
 
@@ -56,10 +56,9 @@ def hrnn_model():
 
 if __name__ == '__main__':
     model = hrnn_model()
-    # model.fit(X_train, Y_train, batch_size=128, epochs=10, validation_split=0.1, validation_data=(X_train, Y_train))
-    # score, acc = model.evaluate(X_test, Y_test, batch_size=128)
-    # print('Test accuracy:', acc)
-    # target = model.predict(X_test, batch_size=128)
-    # auc = roc_auc_score(Y_test, target)
-    # print(auc)
-
+    model.fit(X_train, Y_train, batch_size=128, epochs=10, validation_split=0.1, validation_data=(X_train, Y_train))
+    score, acc = model.evaluate(X_test, Y_test, batch_size=128)
+    print('Test accuracy:', acc)
+    target = model.predict(X_test, batch_size=128)
+    auc = roc_auc_score(Y_test, target)
+    print('AUC', auc)
