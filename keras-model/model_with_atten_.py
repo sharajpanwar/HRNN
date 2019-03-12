@@ -7,18 +7,19 @@ from keras.engine import Input, Model
 from keras.optimizers import Adam
 from sklearn.metrics import roc_auc_score
 
+# uploading training data
 # X_train = h5py.File('tr_drive_hrnn_1.mat')['tr_drive_hrnn_1']
 # X_train = np.transpose(X_train) #0.125 sec data
 # print(X_train.shape)
-#
+# uploading test data
 # X_test = h5py.File('te_drive_hrnn_1.mat')['te_drive_hrnn_1']
 # X_test = np.transpose(X_test)
 # print(X_test.shape)
-#
+#creating labels for training and test data sets.
 # Y_train = np.zeros(X_train.shape[0])
 # Y_test = np.zeros(X_train.shape[0])
-# Y_train[0:500] = 1
-# Y_test[0:250] = 1
+# Y_train[0:500] = 1 # first 500 samples are target samples
+# Y_test[0:250] = 1 # first 250 samples are target samples
 
 def hrnn_model():
 
