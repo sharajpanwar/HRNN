@@ -17,7 +17,7 @@ X_test = np.transpose(X_test)
 print(X_test.shape)
 #creating labels for training and test data sets.
 Y_train = np.zeros(X_train.shape[0])
-Y_test = np.zeros(X_train.shape[0])
+Y_test = np.zeros(X_test.shape[0])
 Y_train[0:500] = 1 # first 500 samples are target samples
 Y_test[0:250] = 1 # first 250 samples are target samples
 
