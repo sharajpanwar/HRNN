@@ -13,14 +13,14 @@ non_target2 = Drowsy_hrnn(x(827:1652), :, :);
 non_target3 = Drowsy_hrnn(x(1653:2478), :, :);
    
 %creating training data => tr_drive_hrnn_1, tr_drive_hrnn_2, tr_drive_hrnn_3
-tr_drive_hrnn_1 =  [target1;target2;non_target1;non_target2];
+tr_drive_hrnn_1 =  [target2;target3;non_target2;non_target3];
 tr_drive_hrnn_2 =  [target1;target3;non_target1;non_target3];
-tr_drive_hrnn_3 =  [target2;target3;non_target2;non_target3];
+tr_drive_hrnn_3 =  [target1;target2;non_target1;non_target2];
 
 %creating test data =>  te_drive_hrnn_1, te_drive_hrnn_2, te_drive_hrnn_3
-te_drive_hrnn_1 = [target3;non_target3];
+te_drive_hrnn_1 = [target1;non_target1];
 te_drive_hrnn_2 = [target2;non_target2];
-te_drive_hrnn_3 = [target1;non_target1];
+te_drive_hrnn_3 = [target3;non_target3];
 
 clear Alerts_hrnn Drowsy_hrnn target1 target2 target3 non_target1 non_target2 non_target3 x
 % each training data file (tr) has first 500 samples target and rest 1652 non-target
